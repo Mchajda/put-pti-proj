@@ -17,6 +17,9 @@
             </div>
 
             <div class="pull-right ">
+                {% if app.user.getRoles[0] == "ROLE_ADMIN" %}
+                    <a href="/admin">Admin panel</a>
+                {% endif %}
                 {% if not app.user %}
                     <a href="/login">Go for login</a>
                 {% else %}

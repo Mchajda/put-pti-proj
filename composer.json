@@ -23,6 +23,7 @@
     },
     "require-dev": {
         "doctrine/doctrine-fixtures-bundle": "^3.4",
+        "symfony/phpunit-bridge": "^5.2",
         "symfony/web-server-bundle": "4.4.2"
     },
     "config": {
