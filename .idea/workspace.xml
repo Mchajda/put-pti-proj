@@ -22,17 +22,11 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c1199655-f345-4d7b-85a2-a06282d6bedc" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/RequestProcessor/CategoryRequestProcessor.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/RequestProcessor/Interfaces/CategoryRequestProcessorInterface.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/RequestProcessor/Interfaces/RoomRequestProcessorInterface.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/RequestProcessor/RoomRequestProcessor.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Service/CategoryService.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Service/Interfaces/CategoryServiceInterface.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Service/Interfaces/RoomServiceInterface.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Service/RoomService.php" afterDir="false" />
+    <list default="true" id="c1199655-f345-4d7b-85a2-a06282d6bedc" name="Default Changelist" comment="categorycontroller">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Service/Interfaces/UserServiceInterface.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Service/Interfaces/UserServiceInterface.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Security/LoginFormAuthenticatior.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Security/LoginFormAuthenticatior.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -144,7 +138,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/Service" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -157,6 +151,8 @@
       <recent name="C:\xampp\htdocs\put-pti-proj\src\Provider" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\put-pti-proj\src\Controller\Admin" />
+      <recent name="C:\xampp\htdocs\put-pti-proj\templates\admin" />
       <recent name="C:\xampp\htdocs\put-pti-proj\tests\user" />
       <recent name="C:\xampp\htdocs\put-pti-proj\tests" />
       <recent name="D:\xampp\htdocs\pti\src\Controller\Admin" />
@@ -174,8 +170,17 @@
       <workItem from="1616514455251" duration="698000" />
       <workItem from="1616516843163" duration="5436000" />
       <workItem from="1617905910163" duration="1371000" />
-      <workItem from="1617950513146" duration="1712000" />
+      <workItem from="1617950513146" duration="2178000" />
+      <workItem from="1618741354616" duration="1381000" />
     </task>
+    <task id="LOCAL-00001" summary="categorycontroller">
+      <created>1617952383383</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1617952383383</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -192,5 +197,9 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="categorycontroller" />
+    <option name="LAST_COMMIT_MESSAGE" value="categorycontroller" />
   </component>
 </project>

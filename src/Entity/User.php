@@ -49,6 +49,11 @@ class User implements UserInterface
      */
     private $updated_at;
 
+    /**
+     * @ORM\Column(type="datetime", nullable=true)
+     */
+    private $last_login;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -159,6 +164,18 @@ class User implements UserInterface
     public function setUpdatedAt(?\DateTimeInterface $updated_at): self
     {
         $this->updated_at = $updated_at;
+
+        return $this;
+    }
+
+    public function getLastLogin(): ?\DateTimeInterface
+    {
+        return $this->last_login;
+    }
+
+    public function setLastLogin(?\DateTimeInterface $last_login): self
+    {
+        $this->last_login = $last_login;
 
         return $this;
     }

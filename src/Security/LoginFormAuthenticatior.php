@@ -3,6 +3,7 @@
 namespace App\Security;
 
 use App\Entity\User;
+use App\Service\Interfaces\UserServiceInterface;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
@@ -31,12 +32,24 @@ class LoginFormAuthenticatior extends AbstractFormLoginAuthenticator implements 
     private $csrfTokenManager;
     private $passwordEncoder;
 
-    public function __construct(EntityManagerInterface $entityManager, UrlGeneratorInterface $urlGenerator, CsrfTokenManagerInterface $csrfTokenManager, UserPasswordEncoderInterface $passwordEncoder)
+    private $userProvider;
+    private $userService;
+
+    public function __construct(
+        EntityManagerInterface $entityManager,
+        UrlGeneratorInterface $urlGenerator,
+        CsrfTokenManagerInterface $csrfTokenManager,
+        UserPasswordEncoderInterface $passwordEncoder,
+        \App\Provider\Interfaces\UserProviderInterface $userProvider,
+        UserServiceInterface $userService
+    )
     {
         $this->entityManager = $entityManager;
         $this->urlGenerator = $urlGenerator;
         $this->csrfTokenManager = $csrfTokenManager;
         $this->passwordEncoder = $passwordEncoder;
+        $this->userProvider = $userProvider;
+        $this->userService = $userService;
     }
 
     public function supports(Request $request)
@@ -95,6 +108,10 @@ class LoginFormAuthenticatior extends AbstractFormLoginAuthenticator implements 
         if ($targetPath = $this->getTargetPath($request->getSession(), $providerKey)) {
             return new RedirectResponse($targetPath);
         }
+
+        $user = $this->userProvider->getOneByEmail($request->request->get('email'));
+        $user->setLastLogin(new \DateTime());
+        $this->userService->save();
 
         // redirect to some "app_homepage" route - of wherever you want
         return new RedirectResponse($this->urlGenerator->generate('main'));
