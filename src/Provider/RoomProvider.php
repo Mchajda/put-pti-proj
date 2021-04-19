@@ -16,13 +16,18 @@ class RoomProvider implements RoomProviderInterface
         $this->repository = $repository;
     }
 
-    public function getAll(): array
+    public function getAll(): ?array
     {
         return $this->repository->findAll();
     }
 
-    public function getOneById($room_id): Room
+    public function getOneById($room_id): ?Room
     {
         return $this->repository->findOneBy(['id' => $room_id]);
+    }
+
+    public function getOneByName($name): ?Room
+    {
+        return $this->repository->findOneBy(['name' => $name]);
     }
 }

@@ -10,14 +10,15 @@ class RoomFactory
 {
     public static function create(
         $name,
-        $category,
-        $parent
+        $user
     ){
         $room = new Room();
 
         $room->setName($name);
-        $room->setCategory($category);
-        $room->setParent($parent);
+        $room->setCreator($user);
+
+        $room->setCreatedAt(new \DateTime());
+        $room->setUpdatedAt(new \DateTime());
 
         return $room;
     }

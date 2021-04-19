@@ -9,5 +9,5 @@ use Symfony\Component\HttpFoundation\Request;
 
 interface RoomRequestProcessorInterface
 {
-    public function create(Request $request): Room;
+    public function create(Request $request, $user): Room;
 }

@@ -23,12 +23,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c1199655-f345-4d7b-85a2-a06282d6bedc" name="Default Changelist" comment="categorycontroller">
-      <change afterPath="$PROJECT_DIR$/templates/front/profile/editForm.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/Admin/CategoryController.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/Front/ProfileController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Front/ProfileController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/RequestProcessor/Interfaces/UserRequestProcessorInterface.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/RequestProcessor/Interfaces/UserRequestProcessorInterface.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/RequestProcessor/UserRequestProcessor.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/RequestProcessor/UserRequestProcessor.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/front/profile/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/front/profile/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/MainController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/MainController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Room.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Room.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Factory/RoomFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Factory/RoomFactory.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Provider/Interfaces/RoomProviderInterface.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Provider/Interfaces/RoomProviderInterface.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Provider/RoomProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Provider/RoomProvider.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/RequestProcessor/Interfaces/RoomRequestProcessorInterface.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/RequestProcessor/Interfaces/RoomRequestProcessorInterface.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/RequestProcessor/RoomRequestProcessor.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/RequestProcessor/RoomRequestProcessor.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/admin/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/base.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/admin/category/index.html.twig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/front/profile/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/front/profile/profile.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -164,11 +173,11 @@
       <recent name="C:\xampp\htdocs\put-pti-proj\src\RequestProcessor\Interfaces" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\put-pti-proj\templates\front" />
+      <recent name="C:\xampp\htdocs\put-pti-proj\src\Controller\Front" />
       <recent name="C:\xampp\htdocs\put-pti-proj\templates\main" />
       <recent name="C:\xampp\htdocs\put-pti-proj\public\assets" />
       <recent name="C:\xampp\htdocs\put-pti-proj\public" />
-      <recent name="C:\xampp\htdocs\put-pti-proj\templates\front" />
-      <recent name="C:\xampp\htdocs\put-pti-proj\src\Controller\Front" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -189,7 +198,8 @@
       <workItem from="1618817220796" duration="4667000" />
       <workItem from="1618822636382" duration="700000" />
       <workItem from="1618824848374" duration="1164000" />
-      <workItem from="1618827097478" duration="1978000" />
+      <workItem from="1618827097478" duration="4745000" />
+      <workItem from="1618838373048" duration="846000" />
     </task>
     <task id="LOCAL-00001" summary="categorycontroller">
       <created>1617952383383</created>

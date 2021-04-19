@@ -37,7 +37,7 @@ class ProfileController extends AbstractController
     {
         $user = $this->security->getUser();
 
-        return $this->render('front/profile/index.html.twig', [
+        return $this->render('front/profile/profile.html.twig', [
             'user' => $user
         ]);
     }

@@ -25,20 +25,20 @@ class Room
     private $name;
 
     /**
-     * @ORM\ManyToOne(targetEntity=Category::class, inversedBy="rooms")
+     * @ORM\Column(type="datetime")
+     */
+    private $created_at;
+
+    /**
+     * @ORM\Column(type="datetime")
+     */
+    private $updated_at;
+
+    /**
+     * @ORM\ManyToOne(targetEntity=User::class, inversedBy="rooms")
      * @ORM\JoinColumn(nullable=false)
      */
-    private $category;
-
-    /**
-     * @ORM\ManyToOne(targetEntity=Room::class, inversedBy="rooms")
-     */
-    private $parent;
-
-    /**
-     * @ORM\OneToMany(targetEntity=Room::class, mappedBy="parent")
-     */
-    private $rooms;
+    private $creator;
 
     public function __construct()
     {
@@ -62,56 +62,38 @@ class Room
         return $this;
     }
 
-    public function getCategory(): ?Category
+    public function getCreatedAt(): ?\DateTimeInterface
     {
-        return $this->category;
+        return $this->created_at;
     }
 
-    public function setCategory(?Category $category): self
+    public function setCreatedAt(\DateTimeInterface $created_at): self
     {
-        $this->category = $category;
+        $this->created_at = $created_at;
 
         return $this;
     }
 
-    public function getParent(): ?self
+    public function getUpdatedAt(): ?\DateTimeInterface
     {
-        return $this->parent;
+        return $this->updated_at;
     }
 
-    public function setParent(?self $parent): self
+    public function setUpdatedAt(\DateTimeInterface $updated_at): self
     {
-        $this->parent = $parent;
+        $this->updated_at = $updated_at;
 
         return $this;
     }
 
-    /**
-     * @return Collection|self[]
-     */
-    public function getRooms(): Collection
+    public function getCreator(): ?User
     {
-        return $this->rooms;
+        return $this->creator;
     }
 
-    public function addRoom(self $room): self
+    public function setCreator(?User $creator): self
     {
-        if (!$this->rooms->contains($room)) {
-            $this->rooms[] = $room;
-            $room->setParent($this);
-        }
-
-        return $this;
-    }
-
-    public function removeRoom(self $room): self
-    {
-        if ($this->rooms->removeElement($room)) {
-            // set the owning side to null (unless already changed)
-            if ($room->getParent() === $this) {
-                $room->setParent(null);
-            }
-        }
+        $this->creator = $creator;
 
         return $this;
     }

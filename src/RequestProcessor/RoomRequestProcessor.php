@@ -11,16 +11,13 @@ use Symfony\Component\HttpFoundation\Request;
 
 class RoomRequestProcessor implements RoomRequestProcessorInterface
 {
-    public function create(Request $request): Room
+    public function create(Request $request, $user): Room
     {
         $name = $request->request->get('name');
-        $category = $request->request->get('category');
-        $parent = $request->request->get('parent');
 
         return RoomFactory::create(
             $name,
-            $category,
-            $parent
+            $user
         );
     }
 }
