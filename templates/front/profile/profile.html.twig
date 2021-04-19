@@ -4,12 +4,41 @@
     <div class="row">
         <div class="col-lg-10 col-md-12">
             <div>
-                <h4>{{ user.getNickname() }}</h4>
+                <h3>{{ user.getNickname() }}</h3>
+                <hr>
             </div>
+
+            <div class="test">
+                <h4>Your rooms</h4>
+                <table class="table table-sm table-borderless table-striped table-hover">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>name</th>
+                            <th>action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for room in user.getRooms() %}
+                            <tr>
+                                <td>{{ loop.index }}</td>
+                                <td>{{ room.getName() }}</td>
+                                <td>
+                                    <a href="{{ path('room_delete', {'room_id' : room.getId()}) }}" class="btn btn-danger btn-sm">Delete</a>
+                                </td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+
+                <hr>
+            </div>
+
             <div class="test">
                 your last activity section
             </div>
         </div>
+
         <div class="col-lg-2 col-md-12">
             <p>
                 <a href="{{ path('edit_profile_form') }}" class="btn btn-info btn-sm btn-block">Edit profile

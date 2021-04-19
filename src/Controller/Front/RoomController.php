@@ -3,6 +3,7 @@
 namespace App\Controller\Front;
 
 use App\Provider\Interfaces\RoomProviderInterface;
+use App\Provider\Interfaces\UserProviderInterface;
 use App\RequestProcessor\Interfaces\RoomRequestProcessorInterface;
 use App\Service\Interfaces\RoomServiceInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -17,17 +18,20 @@ class RoomController extends AbstractController
     private $roomRequestProcessor;
     private $roomProvider;
     private $roomService;
+    private $userProvider;
 
     public function __construct(
         Security $security,
         RoomRequestProcessorInterface $roomRequestProcessor,
         RoomProviderInterface $roomProvider,
-        RoomServiceInterface $roomService
+        RoomServiceInterface $roomService,
+        UserProviderInterface $userProvider
     ){
         $this->security = $security;
         $this->roomRequestProcessor = $roomRequestProcessor;
         $this->roomProvider = $roomProvider;
         $this->roomService = $roomService;
+        $this->userProvider = $userProvider;
     }
 
     /**
@@ -52,6 +56,21 @@ class RoomController extends AbstractController
                 $room = $this->roomRequestProcessor->create($request, $user);
                 $this->roomService->create($room);
             }
+        }
+
+        return $this->redirectToRoute('profile');
+    }
+
+    /**
+     * @Route("/room_delete/{room_id}", name="room_delete")
+     */
+    public function delete(Request $request, $room_id): Response
+    {
+        $user = $this->userProvider->getOneByEmail($this->security->getUser()->getUsername());
+        $room = $this->roomProvider->getOneById($room_id);
+
+        if ($this->security->getUser() && $room->getCreator() == $user) {
+            $this->roomService->delete($room);
         }
 
         return $this->redirectToRoute('profile');
