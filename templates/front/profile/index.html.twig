@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="row">
+        <div class="col-10">
+            <div>
+                <h4>{{ user.getNickname() }}</h4>
+            </div>
+            <div>
+                your last activity section
+            </div>
+        </div>
+        <div class="col-2">
+            <p><a class="btn btn-info btn-sm btn-block">Edit profile</a></p>
+            <p><a class="btn btn-info btn-sm btn-block">Create room</a></p>
+        </div>
+    </div>
+{% endblock %}
