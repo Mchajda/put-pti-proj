@@ -1,6 +1,9 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
+    {% if alert is defined and alert is not empty %}
+        {{ alert }}
+    {% endif %}
     {% if rooms is not empty %}
         <h4>Every service's room</h4>
         <table class="table table-sm table-borderless table-striped table-hover">

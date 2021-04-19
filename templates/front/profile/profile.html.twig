@@ -9,6 +9,36 @@
             </div>
 
             <div class="test">
+                {% if user.getParticipatingInRooms() is not empty %}
+                    <h4>Your rooms</h4>
+                    <table class="table table-sm table-borderless table-striped table-hover">
+                        <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>name</th>
+                            <th>action</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {% for room in user.getParticipatingInRooms() %}
+                            <tr>
+                                <td>{{ loop.index }}</td>
+                                <td>{{ room.getName() }}</td>
+                                <td>
+                                    <a href="{{ path('room_leave', {'room_id' : room.getId()}) }}" class="btn btn-danger btn-sm">Leave</a>
+                                </td>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                {% else %}
+                    You are not a member in any room yet...
+                {% endif %}
+
+                <hr>
+            </div>
+
+            <div class="test">
                 {% if user.getYourRooms() is not empty %}
                     <h4>Your rooms</h4>
                     <table class="table table-sm table-borderless table-striped table-hover">
