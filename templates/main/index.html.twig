@@ -4,29 +4,31 @@
     {% if alert is defined and alert is not empty %}
         {{ alert }}
     {% endif %}
-    {% if rooms is not empty %}
-        <h4>Rooms</h4>
-        <table class="table table-sm table-borderless table-striped table-hover">
-            <thead>
-            <tr>
-                <th>#</th>
-                <th>name</th>
-                <th>action</th>
-            </tr>
-            </thead>
-            <tbody>
-            {% for room in rooms %}
+    {% if app.user %}
+        {% if rooms is not empty %}
+            <h4>Rooms</h4>
+            <table class="table table-sm table-borderless table-striped table-hover">
+                <thead>
                 <tr>
-                    <td>{{ loop.index }}</td>
-                    <td>{{ room.getName() }}</td>
-                    <td>
-                        <a href="{{ path('room_join', {'room_id' : room.getId()}) }}" class="btn btn-warning btn-sm">Join</a>
-                    </td>
+                    <th>#</th>
+                    <th>name</th>
+                    <th>action</th>
                 </tr>
-            {% endfor %}
-            </tbody>
-        </table>
-    {% else %}
-        <h4>Nobody created any room yet...</h4>
+                </thead>
+                <tbody>
+                {% for room in rooms %}
+                    <tr>
+                        <td>{{ loop.index }}</td>
+                        <td>{{ room.getName() }}</td>
+                        <td>
+                            <a href="{{ path('room_join', {'room_id' : room.getId()}) }}" class="btn btn-warning btn-sm">Join</a>
+                        </td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        {% else %}
+            <h4>Nobody created any room yet...</h4>
+        {% endif %}
     {% endif %}
 {% endblock %}

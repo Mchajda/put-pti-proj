@@ -24,6 +24,7 @@
   <component name="ChangeListManager">
     <list default="true" id="c1199655-f345-4d7b-85a2-a06282d6bedc" name="Default Changelist" comment="categorycontroller">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/front/profile/profile.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/front/profile/profile.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/main/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/main/index.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -188,7 +189,7 @@
       <workItem from="1618827097478" duration="4745000" />
       <workItem from="1618838373048" duration="5283000" />
       <workItem from="1618857060584" duration="677000" />
-      <workItem from="1618861330516" duration="938000" />
+      <workItem from="1618861330516" duration="1957000" />
     </task>
     <task id="LOCAL-00001" summary="categorycontroller">
       <created>1617952383383</created>
