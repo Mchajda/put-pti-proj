@@ -53,12 +53,16 @@ class RoomController extends AbstractController
      */
     public function create(Request $request): Response
     {
-        $user = $this->security->getUser();
+        $user = $this->userProvider->getOneByEmail($this->security->getUser()->getUsername());
 
         if ($request->getMethod() == "POST") {
             if (!$this->roomProvider->getOneByName($request->request->get('name'))) {
                 $room = $this->roomRequestProcessor->create($request, $user);
                 $this->roomService->create($room);
+                $user->addParticipatingInRoom($room);
+                $room->addMember($user);
+                $this->roomService->save();
+                $this->userService->save();
             }
         }
 
