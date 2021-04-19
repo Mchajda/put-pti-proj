@@ -23,13 +23,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c1199655-f345-4d7b-85a2-a06282d6bedc" name="Default Changelist" comment="categorycontroller">
-      <change afterPath="$PROJECT_DIR$/public/assets/styles/style.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/main/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/pti.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/pti.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/front/profile/editForm.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/admin/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/base.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/Front/ProfileController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Front/ProfileController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/RequestProcessor/Interfaces/UserRequestProcessorInterface.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/RequestProcessor/Interfaces/UserRequestProcessorInterface.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/RequestProcessor/UserRequestProcessor.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/RequestProcessor/UserRequestProcessor.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/front/profile/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/front/profile/index.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -151,7 +149,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/templates/front/main" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/templates/front/profile" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
@@ -159,11 +157,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\put-pti-proj\templates\front\profile" />
       <recent name="C:\xampp\htdocs\put-pti-proj\templates\front\main" />
       <recent name="C:\xampp\htdocs\put-pti-proj\src\Service" />
       <recent name="C:\xampp\htdocs\put-pti-proj\src\Service\Interfaces" />
       <recent name="C:\xampp\htdocs\put-pti-proj\src\RequestProcessor\Interfaces" />
-      <recent name="C:\xampp\htdocs\put-pti-proj\src\RequestProcessor" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\xampp\htdocs\put-pti-proj\templates\main" />
@@ -190,7 +188,8 @@
       <workItem from="1618768479835" duration="2000" />
       <workItem from="1618817220796" duration="4667000" />
       <workItem from="1618822636382" duration="700000" />
-      <workItem from="1618824848374" duration="715000" />
+      <workItem from="1618824848374" duration="1164000" />
+      <workItem from="1618827097478" duration="1978000" />
     </task>
     <task id="LOCAL-00001" summary="categorycontroller">
       <created>1617952383383</created>
