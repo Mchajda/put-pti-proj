@@ -61,9 +61,15 @@ class User implements UserInterface
      */
     private $rooms;
 
+    /**
+     * @ORM\ManyToMany(targetEntity=Room::class, mappedBy="member")
+     */
+    private $participatingInRooms;
+
     public function __construct()
     {
         $this->rooms = new ArrayCollection();
+        $this->participatingInRooms = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -195,12 +201,12 @@ class User implements UserInterface
     /**
      * @return Collection|Room[]
      */
-    public function getRooms(): Collection
+    public function getYourRooms(): Collection
     {
         return $this->rooms;
     }
 
-    public function addRoom(Room $room): self
+    public function addYourRoom(Room $room): self
     {
         if (!$this->rooms->contains($room)) {
             $this->rooms[] = $room;
@@ -210,13 +216,40 @@ class User implements UserInterface
         return $this;
     }
 
-    public function removeRoom(Room $room): self
+    public function removeYourRoom(Room $room): self
     {
         if ($this->rooms->removeElement($room)) {
             // set the owning side to null (unless already changed)
             if ($room->getCreator() === $this) {
                 $room->setCreator(null);
             }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Room[]
+     */
+    public function getParticipatingInRooms(): Collection
+    {
+        return $this->participatingInRooms;
+    }
+
+    public function addParticipatingInRoom(Room $participatingInRoom): self
+    {
+        if (!$this->participatingInRooms->contains($participatingInRoom)) {
+            $this->participatingInRooms[] = $participatingInRoom;
+            $participatingInRoom->addMember($this);
+        }
+
+        return $this;
+    }
+
+    public function removeParticipatingInRoom(Room $participatingInRoom): self
+    {
+        if ($this->participatingInRooms->removeElement($participatingInRoom)) {
+            $participatingInRoom->removeMember($this);
         }
 
         return $this;

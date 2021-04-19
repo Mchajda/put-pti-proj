@@ -40,9 +40,15 @@ class Room
      */
     private $creator;
 
+    /**
+     * @ORM\ManyToMany(targetEntity=User::class, inversedBy="participatingInRooms")
+     */
+    private $member;
+
     public function __construct()
     {
         $this->rooms = new ArrayCollection();
+        $this->member = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -94,6 +100,30 @@ class Room
     public function setCreator(?User $creator): self
     {
         $this->creator = $creator;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|User[]
+     */
+    public function getMember(): Collection
+    {
+        return $this->member;
+    }
+
+    public function addMember(User $member): self
+    {
+        if (!$this->member->contains($member)) {
+            $this->member[] = $member;
+        }
+
+        return $this;
+    }
+
+    public function removeMember(User $member): self
+    {
+        $this->member->removeElement($member);
 
         return $this;
     }
