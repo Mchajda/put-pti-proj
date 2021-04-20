@@ -45,10 +45,16 @@ class Room
      */
     private $member;
 
+    /**
+     * @ORM\OneToMany(targetEntity=Post::class, mappedBy="room")
+     */
+    private $posts;
+
     public function __construct()
     {
         $this->rooms = new ArrayCollection();
         $this->member = new ArrayCollection();
+        $this->posts = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -124,6 +130,36 @@ class Room
     public function removeMember(User $member): self
     {
         $this->member->removeElement($member);
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Post[]
+     */
+    public function getPosts(): Collection
+    {
+        return $this->posts;
+    }
+
+    public function addPost(Post $post): self
+    {
+        if (!$this->posts->contains($post)) {
+            $this->posts[] = $post;
+            $post->setRoom($this);
+        }
+
+        return $this;
+    }
+
+    public function removePost(Post $post): self
+    {
+        if ($this->posts->removeElement($post)) {
+            // set the owning side to null (unless already changed)
+            if ($post->getRoom() === $this) {
+                $post->setRoom(null);
+            }
+        }
 
         return $this;
     }

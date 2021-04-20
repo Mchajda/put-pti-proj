@@ -23,7 +23,7 @@
                         {% for room in user.getParticipatingInRooms() %}
                             <tr>
                                 <td>{{ loop.index }}</td>
-                                <td>{{ room.getName() }}</td>
+                                <td><a href="{{ path('room', {'room_name' : room.getName()}) }}">{{ room.getName() }}</a></td>
                                 <td>
                                     <a href="{{ path('room_leave', {'room_id' : room.getId()}) }}" class="btn btn-danger btn-sm">Leave</a>
                                 </td>
@@ -53,7 +53,7 @@
                         {% for room in user.getYourRooms() %}
                             <tr>
                                 <td>{{ loop.index }}</td>
-                                <td>{{ room.getName() }}</td>
+                                <td><a href="{{ path('room', {'room_name' : room.getName()}) }}">{{ room.getName() }}</a></td>
                                 <td>
                                     <a href="{{ path('room_delete', {'room_id' : room.getId()}) }}" class="btn btn-danger btn-sm">Delete</a>
                                 </td>

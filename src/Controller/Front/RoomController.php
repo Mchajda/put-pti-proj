@@ -130,4 +130,21 @@ class RoomController extends AbstractController
 
         return $this->redirectToRoute('profile');
     }
+
+    /**
+     * @Route("/{room_name}", name="room")
+     */
+    public function openRoom(Request $request, $room_name): Response
+    {
+        $user = $this->userProvider->getOneByEmail($this->security->getUser()->getUsername());
+        $room = $this->roomProvider->getOneByName($room_name);
+
+        if ($room) {
+            return $this->render('front/room/room.html.twig', [
+                'room' => $room
+            ]);
+        } else {
+            return $this->redirectToRoute('main');
+        }
+    }
 }

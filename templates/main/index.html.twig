@@ -19,7 +19,7 @@
                 {% for room in rooms %}
                     <tr>
                         <td>{{ loop.index }}</td>
-                        <td>{{ room.getName() }}</td>
+                        <td><a href="{{ path('room', {'room_name' : room.getName()}) }}">{{ room.getName() }}</a></td>
                         <td>
                             <a href="{{ path('room_join', {'room_id' : room.getId()}) }}" class="btn btn-warning btn-sm">Join</a>
                         </td>
