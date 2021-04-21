@@ -38,10 +38,31 @@ class RoomController extends AbstractController
         $this->userService = $userService;
     }
 
+
+    /**
+     * @Route("/rooms", name="rooms")
+     */
+    public function index(Request $request): Response
+    {
+        $alert = (string)$request->query->get('alert');
+        $user = $this->userProvider->getOneByEmail($this->security->getUser()->getUsername());
+
+        $rooms_user_belongs = $user->getParticipatingInRooms();
+        $all_rooms = $this->roomProvider->getAll();
+        $rooms_user_does_not_belong = $this->roomProvider->getRoomsUserDoesNotBelongTo($rooms_user_belongs, $all_rooms);
+
+        return $this->render('front/room/index.html.twig', [
+            'alert' => $alert,
+            'rooms_user_does_not_belong' => $rooms_user_does_not_belong,
+            'rooms_user_belongs' => $rooms_user_belongs,
+            'user' => $user,
+        ]);
+    }
+
     /**
      * @Route("/room_create_farm", name="room_create_form")
      */
-    public function index(): Response
+    public function createRoomForm(): Response
     {
         return $this->render('front/room/createRoom.html.twig', [
 
@@ -107,7 +128,7 @@ class RoomController extends AbstractController
             return $this->redirectToRoute('main', ['alert' => 'you already belongs here']);
         }
 
-        return $this->redirectToRoute('main');
+        return $this->redirectToRoute('rooms');
     }
 
     /**
@@ -132,7 +153,7 @@ class RoomController extends AbstractController
     }
 
     /**
-     * @Route("/{room_name}", name="room")
+     * @Route("/room/{room_name}", name="room")
      */
     public function openRoom(Request $request, $room_name): Response
     {

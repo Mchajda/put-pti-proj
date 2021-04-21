@@ -24,9 +24,7 @@
                             <tr>
                                 <td>{{ loop.index }}</td>
                                 <td><a href="{{ path('room', {'room_name' : room.getName()}) }}">{{ room.getName() }}</a></td>
-                                <td>
-                                    <a href="{{ path('room_leave', {'room_id' : room.getId()}) }}" class="btn btn-danger btn-sm">Leave</a>
-                                </td>
+                                <td><a href="{{ path('room_leave', {'room_id' : room.getId()}) }}" class="btn btn-danger btn-sm">Leave</a></td>
                             </tr>
                         {% endfor %}
                         </tbody>

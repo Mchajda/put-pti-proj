@@ -1,34 +1,5 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    {% if alert is defined and alert is not empty %}
-        {{ alert }}
-    {% endif %}
-    {% if app.user %}
-        {% if rooms is not empty %}
-            <h4>Rooms</h4>
-            <table class="table table-sm table-borderless table-striped table-hover">
-                <thead>
-                <tr>
-                    <th>#</th>
-                    <th>name</th>
-                    <th>action</th>
-                </tr>
-                </thead>
-                <tbody>
-                {% for room in rooms %}
-                    <tr>
-                        <td>{{ loop.index }}</td>
-                        <td><a href="{{ path('room', {'room_name' : room.getName()}) }}">{{ room.getName() }}</a></td>
-                        <td>
-                            <a href="{{ path('room_join', {'room_id' : room.getId()}) }}" class="btn btn-warning btn-sm">Join</a>
-                        </td>
-                    </tr>
-                {% endfor %}
-                </tbody>
-            </table>
-        {% else %}
-            <h4>Nobody created any room yet...</h4>
-        {% endif %}
-    {% endif %}
+    main page
 {% endblock %}

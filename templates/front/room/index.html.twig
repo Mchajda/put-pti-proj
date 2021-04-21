@@ -1,0 +1,54 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    {% if alert is defined and alert is not empty %}
+        {{ alert }}
+    {% endif %}
+
+    {% if rooms_user_does_not_belong is not empty %}
+        <h4>Rooms you does not belong to</h4>
+        <table class="table table-sm table-borderless table-striped table-hover">
+            <thead>
+            <tr>
+                <th>#</th>
+                <th>name</th>
+                <th>action</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for room in rooms_user_does_not_belong %}
+                <tr>
+                    <td>{{ loop.index }}</td>
+                    <td><a href="{{ path('room', {'room_name' : room.getName()}) }}">{{ room.getName() }}</a></td>
+                    <td><a href="{{ path('room_join', {'room_id' : room.getId()}) }}" class="btn btn-warning btn-sm">Join</a></td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <!--<h4>There are no rooms to join...</h4>-->
+    {% endif %}
+
+    {% if rooms_user_belongs is not empty %}
+        <h4>Rooms you belongs to</h4>
+        <table class="table table-sm table-borderless table-striped table-hover">
+            <thead>
+            <tr>
+                <th>#</th>
+                <th>name</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for room in rooms_user_belongs %}
+                <tr>
+                    <td>{{ loop.index }}</td>
+                    <td><a href="{{ path('room', {'room_name' : room.getName()}) }}">{{ room.getName() }}</a></td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <h4>You does not belong to any room yet...</h4>
+    {% endif %}
+
+{% endblock %}
