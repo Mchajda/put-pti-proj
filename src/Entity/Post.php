@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\PostRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -38,6 +40,16 @@ class Post
      * @ORM\JoinColumn(nullable=false)
      */
     private $room;
+
+    /**
+     * @ORM\ManyToOne(targetEntity=Post::class, inversedBy="parent")
+     */
+    private $comments;
+
+    public function __construct()
+    {
+        $this->parent = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -88,6 +100,18 @@ class Post
     public function setRoom(?Room $room): self
     {
         $this->room = $room;
+
+        return $this;
+    }
+
+    public function getComments(): ?self
+    {
+        return $this->comments;
+    }
+
+    public function setComments(?self $comments): self
+    {
+        $this->comments = $comments;
 
         return $this;
     }

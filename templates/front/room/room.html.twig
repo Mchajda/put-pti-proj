@@ -2,4 +2,41 @@
 
 {% block body %}
     <h4>Greetings in {{ room.getName() }}</h4>
+
+    {% if posts|length > 0 %}
+        {% for post in posts %}
+            <a href="#">
+                <div class="d-flex post">
+                    <div>
+                        <img class="avatar" src="https://picsum.photos/200" />
+                    </div>
+                    <div class="pl-4 w-100">
+                        <div class="d-flex align-items-baseline justify-content-between">
+                            <h5>{{ post.getAuthor().getNickName() }}</h5>
+                            <h6>{{ post.getCreatedAt()|date("Y-m-d H:i:s") }}</h6>
+                        </div>
+                        <p class="mr-4 mb-0 text-justify">{{ post.getText() }}</p>
+                    </div>
+                </div>
+            </a>
+        {% endfor %}
+    {% else %}
+        Welcome in {{ room.getName() }} {{ user.getNickname() }}, write your first post!
+    {% endif %}
+
+    {% if is_participating == true %}
+        <form method="POSt" action="{{ path('create_post', {'room_id' : room.getId()}) }}">
+            <div class="form-group">
+                <textarea class="form-control" rows="2" name="text"></textarea>
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary">Post!</button>
+            </div>
+        </form>
+    {% else %}
+        <div class="form-group">
+            <a href="{{ path('room_join', {'room_id' : room.getId()}) }}" type="submit" class="btn btn-warning">Join this room</a>
+        </div>
+    {% endif %}
+
 {% endblock %}

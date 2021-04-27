@@ -2,6 +2,7 @@
 
 namespace App\Controller\Front;
 
+use App\Provider\Interfaces\PostProviderInterface;
 use App\Provider\Interfaces\RoomProviderInterface;
 use App\Provider\Interfaces\UserProviderInterface;
 use App\RequestProcessor\Interfaces\RoomRequestProcessorInterface;
@@ -21,6 +22,7 @@ class RoomController extends AbstractController
     private $roomService;
     private $userProvider;
     private $userService;
+    private $postProvider;
 
     public function __construct(
         Security $security,
@@ -28,7 +30,8 @@ class RoomController extends AbstractController
         RoomProviderInterface $roomProvider,
         RoomServiceInterface $roomService,
         UserProviderInterface $userProvider,
-        UserServiceInterface $userService
+        UserServiceInterface $userService,
+        PostProviderInterface $postProvider
     ){
         $this->security = $security;
         $this->roomRequestProcessor = $roomRequestProcessor;
@@ -36,6 +39,7 @@ class RoomController extends AbstractController
         $this->roomService = $roomService;
         $this->userProvider = $userProvider;
         $this->userService = $userService;
+        $this->postProvider = $postProvider;
     }
 
 
@@ -159,10 +163,19 @@ class RoomController extends AbstractController
     {
         $user = $this->userProvider->getOneByEmail($this->security->getUser()->getUsername());
         $room = $this->roomProvider->getOneByName($room_name);
+        $posts = $this->postProvider->getAllByRoomId($room->getId());
+        $is_participating = false;
+
+        foreach ($user->getParticipatingInRooms() as $user_room) {
+            if($user_room == $room)
+                $is_participating = true;
+        }
 
         if ($room) {
             return $this->render('front/room/room.html.twig', [
-                'room' => $room
+                'room' => $room, 'user' => $user,
+                'is_participating' => $is_participating,
+                'posts' => $posts
             ]);
         } else {
             return $this->redirectToRoute('main');

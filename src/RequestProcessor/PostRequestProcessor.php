@@ -5,13 +5,15 @@ namespace App\RequestProcessor;
 
 
 use App\Entity\Post;
+use App\Entity\Room;
+use App\Entity\User;
 use App\Factory\PostFactory;
 use App\RequestProcessor\Interfaces\PostRequestProcessorInterface;
 use Symfony\Component\HttpFoundation\Request;
 
 class PostRequestProcessor implements PostRequestProcessorInterface
 {
-    public function create(Request $request, $author, $room): Post
+    public function create(Request $request, User $author, Room $room, ?Post $parentPost): Post
     {
         $text = $request->request->get('text');
 

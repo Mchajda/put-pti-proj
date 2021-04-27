@@ -28,6 +28,6 @@ class PostProvider implements PostProviderInterface
 
     public function getAllByRoomId($room_id)
     {
-        return $this->repository->findBy(['room_id' => $room_id]);
+        return $this->repository->findBy(['room' => $room_id], ['created_at' => "DESC"]);
     }
 }
