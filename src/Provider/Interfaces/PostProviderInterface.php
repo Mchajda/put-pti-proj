@@ -11,4 +11,5 @@ interface PostProviderInterface
     public function getAll(): array;
     public function getOneById($post_id): Post;
     public function getAllByRoomId($room_id);
+    public function getLast3ByUserId($user_id);
 }

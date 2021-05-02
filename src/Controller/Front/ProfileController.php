@@ -2,6 +2,7 @@
 
 namespace App\Controller\Front;
 
+use App\Provider\Interfaces\PostProviderInterface;
 use App\Provider\Interfaces\UserProviderInterface;
 use App\RequestProcessor\Interfaces\UserRequestProcessorInterface;
 use App\Service\Interfaces\UserServiceInterface;
@@ -17,17 +18,20 @@ class ProfileController extends AbstractController
     private $userRequestProcessor;
     private $userProvider;
     private $userService;
+    private $postProvider;
 
     public function __construct(
         Security $security,
         UserRequestProcessorInterface $userRequestProcessor,
         UserProviderInterface $userProvider,
-        UserServiceInterface $userService
+        UserServiceInterface $userService,
+        PostProviderInterface $postProvider
     ){
         $this->security = $security;
         $this->userRequestProcessor = $userRequestProcessor;
         $this->userProvider = $userProvider;
         $this->userService = $userService;
+        $this->postProvider = $postProvider;
     }
 
     /**

@@ -22,18 +22,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c1199655-f345-4d7b-85a2-a06282d6bedc" name="Default Changelist" comment="categorycontroller">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/styles/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/styles/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/Front/RoomController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Front/RoomController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Post.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Post.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Provider/PostProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Provider/PostProvider.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/RequestProcessor/Interfaces/PostRequestProcessorInterface.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/RequestProcessor/Interfaces/PostRequestProcessorInterface.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/RequestProcessor/PostRequestProcessor.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/RequestProcessor/PostRequestProcessor.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Service/RoomService.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Service/RoomService.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/front/room/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/front/room/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/front/room/room.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/front/room/room.html.twig" afterDir="false" />
-    </list>
+    <list default="true" id="c1199655-f345-4d7b-85a2-a06282d6bedc" name="Default Changelist" comment="categorycontroller" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -41,7 +30,9 @@
   </component>
   <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
-    <execution />
+    <execution>
+      <executable path="composer" />
+    </execution>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -203,6 +194,7 @@
       <workItem from="1619030694494" duration="3927000" />
       <workItem from="1619076380060" duration="30000" />
       <workItem from="1619508190699" duration="7384000" />
+      <workItem from="1619983092466" duration="808000" />
     </task>
     <task id="LOCAL-00001" summary="categorycontroller">
       <created>1617952383383</created>
