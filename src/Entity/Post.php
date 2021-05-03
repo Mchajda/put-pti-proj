@@ -41,11 +41,6 @@ class Post
      */
     private $room;
 
-    /**
-     * @ORM\ManyToOne(targetEntity=Post::class, inversedBy="parent")
-     */
-    private $comments;
-
     public function __construct()
     {
         $this->parent = new ArrayCollection();
@@ -100,18 +95,6 @@ class Post
     public function setRoom(?Room $room): self
     {
         $this->room = $room;
-
-        return $this;
-    }
-
-    public function getComments(): ?self
-    {
-        return $this->comments;
-    }
-
-    public function setComments(?self $comments): self
-    {
-        $this->comments = $comments;
 
         return $this;
     }
