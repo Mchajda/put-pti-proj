@@ -33,6 +33,6 @@ class PostProvider implements PostProviderInterface
 
     public function getLast3ByUserId($user_id)
     {
-        $this->getLast3ByUserId($user_id);
+        return $this->repository->getLast3ByUserId($user_id);
     }
 }

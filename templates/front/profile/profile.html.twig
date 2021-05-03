@@ -8,7 +8,7 @@
                 <hr>
             </div>
 
-            <div class="test">
+            <div class="">
                 {% if user.getParticipatingInRooms() is not empty %}
                     <h4>Rooms you belong to</h4>
                     <table class="table table-sm table-borderless table-striped table-hover">
@@ -36,7 +36,7 @@
                 <hr>
             </div>
 
-            <div class="test">
+            <div class="">
                 {% if user.getYourRooms() is not empty %}
                     <h4>Rooms you created</h4>
                     <table class="table table-sm table-borderless table-striped table-hover">
@@ -66,8 +66,28 @@
                 <hr>
             </div>
 
-            <div class="test">
-                your last activity section
+            <div class="">
+                {% if last_activity is not empty %}
+                    <h4>Your last activity</h4>
+                    <table class="table table-sm table-borderless table-striped table-hover">
+                        <thead>
+                        <tr>
+                            <th>Content</th>
+                            <th>In room</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {% for post in last_activity %}
+                            <tr>
+                                <td><a href="">{{ post.getText() }}</a></td>
+                                <td><a href="{{ path('room', {'room_name' : post.getRoom().getName()}) }}">{{ post.getRoom().getName() }}</a></td>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                {% else %}
+                    We are still waiting for your first post!
+                {% endif %}
             </div>
         </div>
 

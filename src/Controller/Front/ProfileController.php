@@ -40,11 +40,10 @@ class ProfileController extends AbstractController
     public function index(): Response
     {
         $user = $this->userProvider->getOneByEmail($this->security->getUser()->getUsername());
-
-        //dd($user->getParticipatingInRooms()[0]);
+        $last_activity = $this->postProvider->getLast3ByUserId($user->getId());
 
         return $this->render('front/profile/profile.html.twig', [
-            'user' => $user
+            'user' => $user, 'last_activity' => $last_activity,
         ]);
     }
 

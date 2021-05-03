@@ -19,22 +19,20 @@ class PostRepository extends ServiceEntityRepository
         parent::__construct($registry, Post::class);
     }
 
-     /**
-      * @return Post[] Returns an array of Post objects
-      */
+    /**
+    * @return Post[] Returns an array of Post objects
+    */
 
     public function getLast3ByUserId($user_id)
     {
-        return $this->createQueryBuilder('p')
-            ->andWhere('p.exampleField = :author_id')
-            ->setParameter('author_id', $user_id)
-            ->orderBy('p.created_at', 'DESC')
+        return $this->createQueryBuilder('r')
+            ->andWhere('r.author = :id')
+            ->setParameter('id', $user_id)
+            ->orderBy('r.created_at', 'DESC')
             ->setMaxResults(3)
             ->getQuery()
-            ->getResult()
-        ;
+            ->getResult();
     }
-
 
     /*
     public function findOneBySomeField($value): ?Post
