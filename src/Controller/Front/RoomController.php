@@ -13,6 +13,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Security\Core\Security;
+use Symfony\Component\String\Slugger\SluggerInterface;
 
 class RoomController extends AbstractController
 {
@@ -23,6 +24,7 @@ class RoomController extends AbstractController
     private $userProvider;
     private $userService;
     private $postProvider;
+    private $slugger;
 
     public function __construct(
         Security $security,
@@ -31,7 +33,8 @@ class RoomController extends AbstractController
         RoomServiceInterface $roomService,
         UserProviderInterface $userProvider,
         UserServiceInterface $userService,
-        PostProviderInterface $postProvider
+        PostProviderInterface $postProvider,
+        SluggerInterface $slugger
     ){
         $this->security = $security;
         $this->roomRequestProcessor = $roomRequestProcessor;
@@ -40,6 +43,7 @@ class RoomController extends AbstractController
         $this->userProvider = $userProvider;
         $this->userService = $userService;
         $this->postProvider = $postProvider;
+        $this->slugger = $slugger;
     }
 
 
@@ -86,6 +90,7 @@ class RoomController extends AbstractController
                 $this->roomService->create($room);
                 $user->addParticipatingInRoom($room);
                 $room->addMember($user);
+                $room->setSlug($this->slugger->slug($room->getName()));
                 $this->roomService->save();
                 $this->userService->save();
             }
@@ -157,12 +162,12 @@ class RoomController extends AbstractController
     }
 
     /**
-     * @Route("/room/{room_name}", name="room")
+     * @Route("/room/{slug}", name="room", requirements={"name"=".+"})
      */
-    public function openRoom(Request $request, $room_name): Response
+    public function openRoom(Request $request, $slug): Response
     {
         $user = $this->userProvider->getOneByEmail($this->security->getUser()->getUsername());
-        $room = $this->roomProvider->getOneByName($room_name);
+        $room = $this->roomProvider->getOneBySlug($slug);
         $posts = $this->postProvider->getAllByRoomId($room->getId());
         $is_participating = false;
 

@@ -19,7 +19,7 @@
             {% for room in rooms_user_does_not_belong %}
                 <tr>
                     <td>{{ loop.index }}</td>
-                    <td><a href="{{ path('room', {'room_name' : room.getName()}) }}">{{ room.getName() }}</a></td>
+                    <td><a href="{{ path('room', {'slug' : room.getSlug()}) }}">{{ room.getName() }}</a></td>
                     <td><a href="{{ path('room_join', {'room_id' : room.getId()}) }}" class="btn btn-warning btn-sm">Join</a></td>
                 </tr>
             {% endfor %}
@@ -42,7 +42,7 @@
             {% for room in rooms_user_belongs %}
                 <tr>
                     <td>{{ loop.index }}</td>
-                    <td><a href="{{ path('room', {'room_name' : room.getName()}) }}">{{ room.getName() }}</a></td>
+                    <td><a href="{{ path('room', {'slug' : room.getSlug()}) }}">{{ room.getName() }}</a></td>
                 </tr>
             {% endfor %}
             </tbody>

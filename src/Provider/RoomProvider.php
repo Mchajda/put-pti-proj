@@ -31,6 +31,11 @@ class RoomProvider implements RoomProviderInterface
         return $this->repository->findOneBy(['name' => $name]);
     }
 
+    public function getOneBySlug($slug): ?Room
+    {
+        return $this->repository->findOneBy(['slug' => $slug]);
+    }
+
     public function getRoomsUserDoesNotBelongTo($rooms_user_belongs, $all_rooms)
     {
         $rooms_user_does_not_belong = [];

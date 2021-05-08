@@ -23,7 +23,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c1199655-f345-4d7b-85a2-a06282d6bedc" name="Default Changelist" comment="categorycontroller">
-      <change beforePath="$PROJECT_DIR$/src/Entity/Post.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Post.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/Front/RoomController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Front/RoomController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Room.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Room.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Provider/Interfaces/RoomProviderInterface.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Provider/Interfaces/RoomProviderInterface.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Provider/RoomProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Provider/RoomProvider.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/front/room/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/front/room/index.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -146,7 +151,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../imgo" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
@@ -199,6 +204,8 @@
       <workItem from="1619983092466" duration="808000" />
       <workItem from="1620049484443" duration="385000" />
       <workItem from="1620050030397" duration="1419000" />
+      <workItem from="1620475229809" duration="1657000" />
+      <workItem from="1620483953354" duration="756000" />
     </task>
     <task id="LOCAL-00001" summary="categorycontroller">
       <created>1617952383383</created>
