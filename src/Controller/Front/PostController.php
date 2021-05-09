@@ -66,7 +66,10 @@ class PostController extends AbstractController
         $post = $this->postProvider->getOneById($post_id);
         $comments = $this->postProvider->getAllCommentsByPostId($post_id);
 
-        return $this->render('front/post/index.html.twig', ['room' => $room, 'post' => $post ]);
+        return $this->render('front/post/index.html.twig', [
+            'room' => $room, 'post' => $post,
+            'comments' => $comments,
+            ]);
     }
 
     /**
