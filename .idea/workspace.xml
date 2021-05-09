@@ -24,11 +24,9 @@
   <component name="ChangeListManager">
     <list default="true" id="c1199655-f345-4d7b-85a2-a06282d6bedc" name="Default Changelist" comment="categorycontroller">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/Front/RoomController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Front/RoomController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Room.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Room.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Provider/Interfaces/RoomProviderInterface.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Provider/Interfaces/RoomProviderInterface.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Provider/RoomProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Provider/RoomProvider.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/front/room/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/front/room/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/Front/PostController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Front/PostController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/front/room/room.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/front/room/room.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/post/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/front/post/index.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -166,9 +164,9 @@
       <recent name="C:\xampp\htdocs\put-pti-proj\src\RequestProcessor" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\put-pti-proj\templates\front" />
       <recent name="C:\xampp\htdocs\put-pti-proj\src\Controller\Front" />
       <recent name="C:\xampp\htdocs\put-pti-proj\templates\front\room" />
-      <recent name="C:\xampp\htdocs\put-pti-proj\templates\front" />
       <recent name="C:\xampp\htdocs\put-pti-proj\templates\main" />
       <recent name="C:\xampp\htdocs\put-pti-proj\public\assets" />
     </key>
@@ -206,6 +204,7 @@
       <workItem from="1620050030397" duration="1419000" />
       <workItem from="1620475229809" duration="1657000" />
       <workItem from="1620483953354" duration="756000" />
+      <workItem from="1620556179418" duration="2390000" />
     </task>
     <task id="LOCAL-00001" summary="categorycontroller">
       <created>1617952383383</created>

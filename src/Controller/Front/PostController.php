@@ -56,4 +56,15 @@ class PostController extends AbstractController
 
         return $this->redirectToRoute('room', ['room_name' => $room->getName(), ]);
     }
+
+    /**
+     * @Route("/{room_slug}/post/{post_id}", name="show_post")
+     */
+    public function showPost(Request $request, $room_slug, $post_id): Response
+    {
+        $room = $this->roomProvider->getOneBySlug($room_slug);
+        $post = $this->postProvider->getOneById($post_id);
+
+        return $this->render('front/post/index.html.twig', ['room_name' => $room->getName(), 'post' => $post ]);
+    }
 }
