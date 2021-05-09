@@ -23,7 +23,7 @@
                         {% for room in user.getParticipatingInRooms() %}
                             <tr>
                                 <td>{{ loop.index }}</td>
-                                <td><a href="{{ path('room', {'room_name' : room.getName()}) }}">{{ room.getName() }}</a></td>
+                                <td><a href="{{ path('room', {'slug' : room.slug}) }}">{{ room.getName() }}</a></td>
                                 <td><a href="{{ path('room_leave', {'room_id' : room.getId()}) }}" class="btn btn-danger btn-sm">Leave</a></td>
                             </tr>
                         {% endfor %}
@@ -51,7 +51,7 @@
                         {% for room in user.getYourRooms() %}
                             <tr>
                                 <td>{{ loop.index }}</td>
-                                <td><a href="{{ path('room', {'room_name' : room.getName()}) }}">{{ room.getName() }}</a></td>
+                                <td><a href="{{ path('room', {'slug' : room.slug}) }}">{{ room.getName() }}</a></td>
                                 <td>
                                     <a href="{{ path('room_delete', {'room_id' : room.getId()}) }}" class="btn btn-danger btn-sm">Delete</a>
                                 </td>
@@ -80,7 +80,7 @@
                         {% for post in last_activity %}
                             <tr>
                                 <td><a href="">{{ post.getText() }}</a></td>
-                                <td><a href="{{ path('room', {'room_name' : post.getRoom().getName()}) }}">{{ post.getRoom().getName() }}</a></td>
+                                <td><a href="{{ path('room', {'slug' : post.getRoom().slug}) }}">{{ post.getRoom().getName() }}</a></td>
                             </tr>
                         {% endfor %}
                         </tbody>

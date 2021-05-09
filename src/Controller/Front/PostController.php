@@ -54,7 +54,7 @@ class PostController extends AbstractController
             $this->postService->create($newPost);
         }
 
-        return $this->redirectToRoute('room', ['room_name' => $room->getName(), ]);
+        return $this->redirectToRoute('room', ['slug' => $room->getSlug(), ]);
     }
 
     /**
@@ -66,10 +66,18 @@ class PostController extends AbstractController
         $post = $this->postProvider->getOneById($post_id);
         $comments = $this->postProvider->getAllCommentsByPostId($post_id);
 
+        $user = $this->userProvider->getOneByEmail($this->security->getUser()->getUsername());
+        $is_participating = false;
+
+        foreach ($user->getParticipatingInRooms() as $user_room) {
+            if($user_room == $room)
+                $is_participating = true;
+        }
+
         return $this->render('front/post/index.html.twig', [
             'room' => $room, 'post' => $post,
-            'comments' => $comments,
-            ]);
+            'comments' => $comments, 'is_participating' => $is_participating,
+        ]);
     }
 
     /**
@@ -85,6 +93,8 @@ class PostController extends AbstractController
             $this->postService->create($newPost);
         }
 
-        return $this->redirectToRoute('show_post', ['room_slug' => $room->getSlug(), 'post_id' => $parent_post_id ]);
+        return $this->redirectToRoute('show_post', [
+            'room_slug' => $room->getSlug(), 'post_id' => $parent_post_id,
+        ]);
     }
 }

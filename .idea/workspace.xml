@@ -23,9 +23,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c1199655-f345-4d7b-85a2-a06282d6bedc" name="Default Changelist" comment="categorycontroller">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/Front/PostController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Front/PostController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/front/post/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/front/post/index.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -204,6 +202,7 @@
       <workItem from="1620475229809" duration="1657000" />
       <workItem from="1620483953354" duration="756000" />
       <workItem from="1620556179418" duration="2390000" />
+      <workItem from="1620583908132" duration="246000" />
     </task>
     <task id="LOCAL-00001" summary="categorycontroller">
       <created>1617952383383</created>
