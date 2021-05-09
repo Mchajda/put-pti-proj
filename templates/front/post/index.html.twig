@@ -15,4 +15,34 @@
             <p class="mr-4 mb-0 text-justify">{{ post.getText() }}</p>
         </div>
     </div>
+
+    {% if posts|length > 0 %}
+        {% for post in posts %}
+            <a href="{{ path('show_post', {'room_slug' : room.slug, 'post_id' : post.id}) }}">
+                <div class="d-flex post">
+                    <div>
+                        <img class="avatar" src="https://picsum.photos/200" />
+                    </div>
+                    <div class="pl-4 w-100">
+                        <div class="d-flex align-items-baseline justify-content-between">
+                            <h5>{{ post.getAuthor().getNickName() }}</h5>
+                            <h6>{{ post.getCreatedAt()|date("Y-m-d H:i:s") }}</h6>
+                        </div>
+                        <p class="mr-4 mb-0 text-justify">{{ post.getText() }}</p>
+                    </div>
+                </div>
+            </a>
+        {% endfor %}
+    {% else %}
+        Welcome in {{ room.getName() }} {{ user.getNickname() }}, write your first post!
+    {% endif %}
+
+    <form method="POSt" action="{{ path('create_comment', {'room_id' : room.getId(), 'parent_post_id' : post.id}) }}">
+        <div class="form-group">
+            <textarea class="form-control" rows="2" name="text"></textarea>
+        </div>
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary">Post!</button>
+        </div>
+    </form>
 {% endblock %}

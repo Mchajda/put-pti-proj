@@ -13,14 +13,15 @@ use Symfony\Component\HttpFoundation\Request;
 
 class PostRequestProcessor implements PostRequestProcessorInterface
 {
-    public function create(Request $request, User $author, Room $room, ?Post $parentPost): Post
+    public function create(Request $request, User $author, Room $room, $parentPostId): Post
     {
         $text = $request->request->get('text');
 
         return PostFactory::create(
             $text,
             $author,
-            $room
+            $room,
+            $parentPostId
         );
     }
 }

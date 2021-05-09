@@ -11,5 +11,5 @@ use Symfony\Component\HttpFoundation\Request;
 
 interface PostRequestProcessorInterface
 {
-    public function create(Request $request, User $author, Room $room, ?Post $parentPost): Post;
+    public function create(Request $request, User $author, Room $room, $parentPostId): Post;
 }

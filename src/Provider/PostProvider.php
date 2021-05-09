@@ -26,6 +26,11 @@ class PostProvider implements PostProviderInterface
         return $this->repository->findOneBy(['id' => $post_id]);
     }
 
+    public function getAllCommentsByPostId($post_id): ?array
+    {
+        return $this->repository->findBy(['parent_id' => $post_id], ['created_at' => "DESC"]);
+    }
+
     public function getAllByRoomId($room_id)
     {
         return $this->repository->findBy(['room' => $room_id], ['created_at' => "DESC"]);

@@ -64,7 +64,24 @@ class PostController extends AbstractController
     {
         $room = $this->roomProvider->getOneBySlug($room_slug);
         $post = $this->postProvider->getOneById($post_id);
+        $comments = $this->postProvider->getAllCommentsByPostId($post_id);
 
-        return $this->render('front/post/index.html.twig', ['room_name' => $room->getName(), 'post' => $post ]);
+        return $this->render('front/post/index.html.twig', ['room' => $room, 'post' => $post ]);
+    }
+
+    /**
+     * @Route("/post/create/{room_id}/{parent_post_id}", name="create_comment")
+     */
+    public function createComment(Request $request, $room_id, $parent_post_id): Response
+    {
+        $user = $this->userProvider->getOneByEmail($this->security->getUser()->getUsername());
+        $room = $this->roomProvider->getOneById($room_id);
+
+        if ($request->getMethod() == "POST") {
+            $newPost = $this->postRequestProcessor->create($request, $user, $room, $parent_post_id);
+            $this->postService->create($newPost);
+        }
+
+        return $this->redirectToRoute('show_post', ['room_slug' => $room->getSlug(), 'post_id' => $parent_post_id ]);
     }
 }

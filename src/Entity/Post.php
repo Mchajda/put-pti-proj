@@ -41,9 +41,14 @@ class Post
      */
     private $room;
 
+    /**
+     * @ORM\Column(type="integer", nullable=true)
+     */
+    private $parent_id;
+
     public function __construct()
     {
-        $this->parent = new ArrayCollection();
+
     }
 
     public function getId(): ?int
@@ -95,6 +100,18 @@ class Post
     public function setRoom(?Room $room): self
     {
         $this->room = $room;
+
+        return $this;
+    }
+
+    public function getParentId(): ?int
+    {
+        return $this->parent_id;
+    }
+
+    public function setParentId(?int $parent_id): self
+    {
+        $this->parent_id = $parent_id;
 
         return $this;
     }
