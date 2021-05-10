@@ -48,6 +48,19 @@ class ProfileController extends AbstractController
     }
 
     /**
+     * @Route("/profile/{nickname}", name="other_user_profile")
+     */
+    public function otherProfile($nickname): Response
+    {
+        $user = $this->userProvider->getOneByNick($nickname);
+        $last_activity = $this->postProvider->getLast3ByUserId($user->getId());
+
+        return $this->render('front/profile/otherUserProfile.html.twig', [
+            'user' => $user, 'last_activity' => $last_activity,
+        ]);
+    }
+
+    /**
      * @Route("/profile_edit_form", name="edit_profile_form")
      */
     public function editForm(): Response

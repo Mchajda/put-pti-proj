@@ -23,6 +23,10 @@ class UserProvider implements UserProviderInterface
         return $this->repository->findOneBy(['id' => $user_id]);
     }
 
+    public function getOneByNick($nickname){
+        return $this->repository->findOneBy(['nickname' => $nickname]);
+    }
+
     public function getOneByEmail($email){
         return $this->repository->findOneBy(['email' => $email]);
     }

@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="row">
+        <div class="col-lg-12 col-md-12">
+            <div>
+                <h3>{{ user.getNickname() }}</h3>
+                <hr>
+            </div>
+
+            <div class="">
+                {% if last_activity is not empty %}
+                    <h4>{{ user.getNickname }} last activity</h4>
+                    <table class="table table-sm table-borderless table-striped table-hover">
+                        <thead>
+                        <tr>
+                            <th>Content</th>
+                            <th>In room</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {% for post in last_activity %}
+                            <tr>
+                                <td><a href="">{{ post.getText() }}</a></td>
+                                <td><a href="{{ path('room', {'slug' : post.getRoom().slug}) }}">{{ post.getRoom().getName() }}</a></td>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                {% else %}
+                    This user has not posted anything yet.
+                {% endif %}
+            </div>
+        </div>
+    </div>
+{% endblock %}
