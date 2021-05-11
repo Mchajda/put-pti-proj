@@ -11,6 +11,13 @@ body{
     border-radius: 8px;
     padding: 8px;
 }
+.main-post{
+    margin: 16px 0 16px;
+    background-color: #F8F9FA;
+    border-radius: 8px;
+    padding: 8px;
+    border: 2px silver solid;
+}
 .avatar{
     width: 50px;
     height: 50px;

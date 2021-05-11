@@ -23,13 +23,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c1199655-f345-4d7b-85a2-a06282d6bedc" name="Default Changelist" comment="categorycontroller">
-      <change afterPath="$PROJECT_DIR$/templates/front/profile/otherUserProfile.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/Front/ProfileController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Front/ProfileController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Provider/Interfaces/UserProviderInterface.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Provider/Interfaces/UserProviderInterface.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Provider/PostProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Provider/PostProvider.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Provider/UserProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Provider/UserProvider.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/front/room/room.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/front/room/room.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/styles/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/styles/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/front/post/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/front/post/index.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -210,6 +206,7 @@
       <workItem from="1620556179418" duration="2390000" />
       <workItem from="1620583908132" duration="646000" />
       <workItem from="1620670427749" duration="2285000" />
+      <workItem from="1620739471227" duration="597000" />
     </task>
     <task id="LOCAL-00001" summary="categorycontroller">
       <created>1617952383383</created>
