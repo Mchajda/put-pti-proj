@@ -5,14 +5,18 @@
 {% block body %}
     <div class="d-flex main-post">
         <div>
-            <img class="avatar" src="https://picsum.photos/200" />
+            <a href="{{ path('other_user_profile', {'nickname' : post.author.nickname}) }}"><img class="avatar" src="https://picsum.photos/200" /></a>
         </div>
         <div class="pl-4 w-100">
             <div class="d-flex align-items-baseline justify-content-between">
-                <h5>{{ post.getAuthor().getNickName() }}</h5>
-                <h6>{{ post.getCreatedAt()|date("Y-m-d H:i:s") }}</h6>
+                <div>
+                    <a href="{{ path('other_user_profile', {'nickname' : post.author.nickname}) }}"><h5>{{ post.getAuthor().getNickName() }}</h5></a>
+                </div>
+                <div style="">
+                    <h6>{{ post.getCreatedAt()|date("Y-m-d H:i:s") }}</h6>
+                </div>
             </div>
-            <p class="mr-4 mb-0 text-justify">{{ post.getText() }}</p>
+            <a href="{{ path('show_post', {'room_slug' : room.slug, 'post_id' : post.id}) }}"><p class="mr-4 mb-0 text-justify">{{ post.getText() }}</p></a>
         </div>
     </div>
 
