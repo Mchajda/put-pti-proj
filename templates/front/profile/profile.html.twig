@@ -8,10 +8,10 @@
                 <hr>
             </div>
 
-            <div class="">
+            <div class="card card-body">
                 {% if user.getParticipatingInRooms() is not empty %}
                     <h4>Rooms you belong to</h4>
-                    <table class="table table-sm table-borderless table-striped table-hover">
+                    <table class="table table-sm table-striped table-hover">
                         <thead>
                         <tr>
                             <th>#</th>
@@ -32,14 +32,12 @@
                 {% else %}
                     You are not a member in any room yet...
                 {% endif %}
-
-                <hr>
             </div>
 
-            <div class="">
+            <div class="card card-body mt-4">
                 {% if user.getYourRooms() is not empty %}
                     <h4>Rooms you created</h4>
-                    <table class="table table-sm table-borderless table-striped table-hover">
+                    <table class="table table-sm table-striped table-hover">
                         <thead>
                         <tr>
                             <th>#</th>
@@ -62,14 +60,12 @@
                 {% else %}
                     You have not created any rooms yet...
                 {% endif %}
-
-                <hr>
             </div>
 
-            <div class="">
+            <div class="card card-body mt-4">
                 {% if last_activity is not empty %}
                     <h4>Your last activity</h4>
-                    <table class="table table-sm table-borderless table-striped table-hover">
+                    <table class="table table-sm table-striped table-hover">
                         <thead>
                         <tr>
                             <th>Content</th>
@@ -92,6 +88,10 @@
         </div>
 
         <div class="col-lg-2 col-md-12">
+            <div>
+                <h3>Akcje</h3>
+                <hr>
+            </div>
             <p>
                 <a href="{{ path('edit_profile_form') }}" class="btn btn-info btn-sm btn-block">Edit profile
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-lines-fill" viewBox="0 0 16 16">

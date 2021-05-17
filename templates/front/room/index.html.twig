@@ -6,6 +6,9 @@
     {% endif %}
 
     {% if rooms_user_does_not_belong is not empty %}
+        <div class="card card-body">
+            <img class="avatar" src="https://picsum.photos/200" />
+        </div>
         <h4>Rooms you do not belong to</h4>
         <table class="table table-sm table-borderless table-striped table-hover">
             <thead>
@@ -31,22 +34,21 @@
 
     {% if rooms_user_belongs is not empty %}
         <h4>Rooms you belong to</h4>
-        <table class="table table-sm table-borderless table-striped table-hover">
-            <thead>
-            <tr>
-                <th>#</th>
-                <th>name</th>
-            </tr>
-            </thead>
-            <tbody>
-            {% for room in rooms_user_belongs %}
-                <tr>
-                    <td>{{ loop.index }}</td>
-                    <td><a href="{{ path('room', {'slug' : room.getSlug()}) }}">{{ room.getName() }}</a></td>
-                </tr>
-            {% endfor %}
-            </tbody>
-        </table>
+        {% for room in rooms_user_belongs %}
+            <div class="card card-body p-2">
+                <div class="d-flex">
+                    <div><img class="avatar" src="https://picsum.photos/200" /></div>
+                    <div class="d-flex align-items-center justify-content-between pl-3 w-100">
+                        <a href="{{ path('room', {'slug' : room.getSlug()}) }}"><h5 class="mb-0">{{ room.getName() }}</h5></a>
+                        <div>
+                            <span class="badge badge-success p-2">active users: {{ room.getMember|length }}</span>
+                            <span class="badge badge-primary p-2">total posts: {{ room.getPosts|length }}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+
     {% else %}
         <h4>You does not belong to any room yet...</h4>
     {% endif %}
