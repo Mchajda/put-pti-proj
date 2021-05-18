@@ -75,7 +75,7 @@
                         <tbody>
                         {% for post in last_activity %}
                             <tr>
-                                <td><a href="">{{ post.getText() }}</a></td>
+                                <td><a href="">{{ post.getText()|raw }}</a></td>
                                 <td><a href="{{ path('room', {'slug' : post.getRoom().slug}) }}">{{ post.getRoom().getName() }}</a></td>
                             </tr>
                         {% endfor %}

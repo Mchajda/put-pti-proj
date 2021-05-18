@@ -18,7 +18,7 @@
                             <h6>{{ post.getCreatedAt()|date("Y-m-d H:i:s") }}</h6>
                         </div>
                     </div>
-                    <a href="{{ path('show_post', {'room_slug' : room.slug, 'post_id' : post.id}) }}"><p class="mr-4 mb-0 text-justify">{{ post.getText() }}</p></a>
+                    <a href="{{ path('show_post', {'room_slug' : room.slug, 'post_id' : post.id}) }}"><p class="mr-4 mb-0 text-justify">{{ post.getText()|raw }}</p></a>
                 </div>
             </div>
         {% endfor %}
@@ -29,7 +29,7 @@
     {% if is_participating == true %}
         <form method="POSt" action="{{ path('create_post', {'room_id' : room.getId()}) }}">
             <div class="form-group">
-                <textarea class="form-control" rows="2" name="text"></textarea>
+                <textarea class="form-control" id="editor1" name="text"></textarea>
             </div>
             <div class="form-group">
                 <button type="submit" class="btn btn-primary">Post!</button>
@@ -41,4 +41,10 @@
         </div>
     {% endif %}
 
+{% endblock %}
+{% block javascripts %}
+    {{ parent() }}
+    <script>
+        CKEDITOR.replace( 'editor1' );
+    </script>
 {% endblock %}
