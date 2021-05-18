@@ -62,7 +62,12 @@ class RoomProvider implements RoomProviderInterface
         $rooms_segregated = [];
 
         foreach ($rooms as $key => $room) {
-            $rooms_segregated[$key] = ["participants" => $room->getMember()->count(), "posts" => $room->getPosts()->count()];
+            $rooms_segregated[$key] = [
+                "participants" => $room->getMember()->count(),
+                "posts" => $room->getPosts()->count(),
+                "name" => $room->getName(),
+                "slug" => $room->getSlug(),
+            ];
         }
 
         foreach ($rooms_segregated as $key => $room) {

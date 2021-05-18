@@ -1,5 +1,19 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    main page
+    <h4>Most active rooms: </h4>
+    {% for room in most_active_rooms %}
+        <div class="card card-body p-2 mb-2">
+            <div class="d-flex">
+                <div><img class="avatar" src="https://picsum.photos/200" /></div>
+                <div class="d-flex align-items-center justify-content-between pl-3 w-100">
+                    <a href="{{ path('room', {'slug' : room['slug']}) }}"><h5 class="mb-0">{{ room['name'] }}</h5></a>
+                    <div>
+                        <span class="badge badge-success p-2">active users: {{ room['participants'] }}</span>
+                        <span class="badge badge-primary p-2">total posts: {{ room['posts'] }}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
 {% endblock %}

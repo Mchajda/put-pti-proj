@@ -12,7 +12,6 @@ use Symfony\Component\Security\Core\Security;
 
 class MainController extends AbstractController
 {
-    //for debugging
     private $security;
     private $roomProvider;
     private $userProvider;
@@ -33,10 +32,10 @@ class MainController extends AbstractController
     public function index(Request $request): Response
     {
         $alert = (string)$request->query->get('alert');
-        dd($this->roomProvider->getMostActiveRooms());
+        $most_active_rooms = $this->roomProvider->getMostActiveRooms();
 
         return $this->render('main/index.html.twig', [
-            'alert' => $alert,
+            'alert' => $alert, 'most_active_rooms' => $most_active_rooms,
         ]);
     }
 }
