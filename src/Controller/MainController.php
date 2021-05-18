@@ -33,6 +33,7 @@ class MainController extends AbstractController
     public function index(Request $request): Response
     {
         $alert = (string)$request->query->get('alert');
+        dd($this->roomProvider->getMostActiveRooms());
 
         return $this->render('main/index.html.twig', [
             'alert' => $alert,

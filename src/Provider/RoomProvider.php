@@ -55,4 +55,26 @@ class RoomProvider implements RoomProviderInterface
 
         return $rooms_user_does_not_belong;
     }
+
+    public function getMostActiveRooms()
+    {
+        $rooms = $this->getAll();
+        $rooms_segregated = [];
+
+        foreach ($rooms as $key => $room) {
+            $rooms_segregated[$key] = ["participants" => $room->getMember()->count(), "posts" => $room->getPosts()->count()];
+        }
+
+        foreach ($rooms_segregated as $key => $room) {
+            for ($i=0; $i<sizeof($rooms_segregated)-1; $i++) {
+                if ($rooms_segregated[$i]['posts'] < $rooms_segregated[$i+1]['posts']) {
+                    $temp = $rooms_segregated[$i];
+                    $rooms_segregated[$i] = $rooms_segregated[$i+1];
+                    $rooms_segregated[$i+1] = $temp;
+                }
+            }
+        }
+
+        return $rooms_segregated;
+    }
 }

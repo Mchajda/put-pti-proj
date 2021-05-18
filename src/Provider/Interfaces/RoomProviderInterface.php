@@ -13,4 +13,5 @@ interface RoomProviderInterface
     public function getOneByName($name): ?Room;
     public function getOneBySlug($slug): ?Room;
     public function getRoomsUserDoesNotBelongTo($rooms_user_belongs, $all_rooms);
+    public function getMostActiveRooms();
 }
