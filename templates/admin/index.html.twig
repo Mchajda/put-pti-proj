@@ -39,7 +39,55 @@
                 </table>
             </div>
         </div>
-        <div class="tab-pane fade" id="pills-rooms" role="tabpanel" aria-labelledby="pills-rooms-tab">b</div>
-        <div class="tab-pane fade" id="pills-posts" role="tabpanel" aria-labelledby="pills-posts-tab">c</div>
+
+        <div class="tab-pane fade" id="pills-rooms" role="tabpanel" aria-labelledby="pills-rooms-tab">
+            <div class="card card-body mt-2 mb-2">
+                <table class="table table-sm table-striped table-hover">
+                    <thead>
+                    <tr>
+                        <th>Room name</th>
+                        <th>Author</th>
+                        <th>Actions</th>
+                        <th>Create date</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for room in rooms %}
+                        <tr>
+                            <td>{{ room.name }}</td>
+                            <td>{{ room.creator.nickname }}</td>
+                            <td></td>
+                            <td>{{ room.createdAt | date("Y-m-d H:i:s") }}</td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="tab-pane fade" id="pills-posts" role="tabpanel" aria-labelledby="pills-posts-tab">
+            <div class="card card-body mt-2 mb-2">
+                <table class="table table-sm table-striped table-hover">
+                    <thead>
+                    <tr>
+                        <th>Author</th>
+                        <th>Content</th>
+                        <th>Actions</th>
+                        <th>Create date</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for post in posts %}
+                        <tr>
+                            <td>{{ post.author.nickname }}</td>
+                            <td>{{ post.text|raw }}</td>
+                            <td></td>
+                            <td>{{ post.createdAt | date("Y-m-d H:i:s") }}</td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
     </div>
 {% endblock %}

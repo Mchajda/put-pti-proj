@@ -31,9 +31,13 @@ class AdminController extends AbstractController
     public function index(): Response
     {
         $users = $this->userProvider->getUsersForAdmin();
+        $rooms = $this->roomProvider->getAll();
+        $posts = $this->postProvider->getAll();
 
         return $this->render('admin/index.html.twig', [
             'users' => $users,
+            'rooms' => $rooms,
+            'posts' => $posts,
         ]);
     }
 }
