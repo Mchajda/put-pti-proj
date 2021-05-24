@@ -16,7 +16,28 @@
     </ul>
     <div class="tab-content" id="pills-tabContent">
         <div class="tab-pane fade show active" id="pills-users" role="tabpanel" aria-labelledby="pills-users-tab">
-
+            <div class="card card-body mt-2 mb-2">
+                <table class="table table-sm table-striped table-hover">
+                    <thead>
+                    <tr>
+                        <th>Nickname</th>
+                        <th>Status</th>
+                        <th>Actions</th>
+                        <th>Register date</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for user in users %}
+                        <tr>
+                            <td>{{ user.nickname }}</td>
+                            <td>{{ user.status }}</td>
+                            <td></td>
+                            <td>{{ user.createdAt | date("Y-m-d H:i:s") }}</td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
         </div>
         <div class="tab-pane fade" id="pills-rooms" role="tabpanel" aria-labelledby="pills-rooms-tab">b</div>
         <div class="tab-pane fade" id="pills-posts" role="tabpanel" aria-labelledby="pills-posts-tab">c</div>

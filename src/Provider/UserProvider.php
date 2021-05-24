@@ -36,6 +36,6 @@ class UserProvider implements UserProviderInterface
     }
 
     public function getUsersForAdmin(){
-        return $this->repository->findBy(['roles' => 'ROLE_USER']);
+        return $this->repository->findByRole("ROLE_USER");
     }
 }

@@ -33,7 +33,7 @@ class AdminController extends AbstractController
         $users = $this->userProvider->getUsersForAdmin();
 
         return $this->render('admin/index.html.twig', [
-            //'users' => $users,
+            'users' => $users,
         ]);
     }
 }
