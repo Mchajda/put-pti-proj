@@ -11,4 +11,5 @@ interface UserProviderInterface
     public function getOneByEmail($email);
     public function getOneByNick($nickname);
     public function getOneByNickname($nickname);
+    public function getUsersForAdmin();
 }

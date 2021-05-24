@@ -166,22 +166,26 @@ class RoomController extends AbstractController
      */
     public function openRoom(Request $request, $slug): Response
     {
-        $user = $this->userProvider->getOneByEmail($this->security->getUser()->getUsername());
-        $room = $this->roomProvider->getOneBySlug($slug);
-        $posts = $this->postProvider->getAllByRoomId($room->getId());
-        $is_participating = false;
+        if ($this->security->getUser() != null) {
+            $user = $this->userProvider->getOneByEmail($this->security->getUser()->getUsername());
+            $room = $this->roomProvider->getOneBySlug($slug);
+            $posts = $this->postProvider->getAllByRoomId($room->getId());
+            $is_participating = false;
 
-        foreach ($user->getParticipatingInRooms() as $user_room) {
-            if($user_room == $room)
-                $is_participating = true;
-        }
+            foreach ($user->getParticipatingInRooms() as $user_room) {
+                if($user_room == $room)
+                    $is_participating = true;
+            }
 
-        if ($room) {
-            return $this->render('front/room/room.html.twig', [
-                'room' => $room, 'user' => $user,
-                'is_participating' => $is_participating,
-                'posts' => $posts
-            ]);
+            if ($room) {
+                return $this->render('front/room/room.html.twig', [
+                    'room' => $room, 'user' => $user,
+                    'is_participating' => $is_participating,
+                    'posts' => $posts
+                ]);
+            } else {
+                return $this->redirectToRoute('main');
+            }
         } else {
             return $this->redirectToRoute('main');
         }

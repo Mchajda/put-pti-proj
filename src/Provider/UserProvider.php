@@ -34,4 +34,8 @@ class UserProvider implements UserProviderInterface
     public function getOneByNickname($nickname){
         return $this->repository->findOneBy(['nickname' => $nickname]);
     }
+
+    public function getUsersForAdmin(){
+        return $this->repository->findBy(['roles' => 'ROLE_USER']);
+    }
 }

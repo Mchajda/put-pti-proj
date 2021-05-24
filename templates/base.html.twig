@@ -30,7 +30,7 @@
 
             <div class="pull-right ">
                 {% if app.user is not null and app.user.getRoles[0] == "ROLE_ADMIN" %}
-                    <a href="/admin">Admin panel</a>
+                    <a href="{{ path('admin_panel') }}">Admin panel</a>
                 {% endif %}
                 {% if not app.user %}
                     <a href="/login">Go for login</a>
