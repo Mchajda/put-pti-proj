@@ -22,8 +22,8 @@
                     <tr>
                         <th>Nickname</th>
                         <th>Status</th>
-                        <th>Actions</th>
                         <th>Register date</th>
+                        <th>Actions</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -31,8 +31,14 @@
                         <tr>
                             <td>{{ user.nickname }}</td>
                             <td>{{ user.status }}</td>
-                            <td></td>
                             <td>{{ user.createdAt | date("Y-m-d H:i:s") }}</td>
+                            <td>
+                                {% if user.status == "banned" %}
+                                    <a href="{{ path('admin_unban_user', {'user_id' : user.id}) }}" class="btn btn-warning btn-sm">Unban</a>
+                                {% else %}
+                                    <a href="{{ path('admin_ban_user', {'user_id' : user.id}) }}" class="btn btn-danger btn-sm">Ban</a>
+                                {% endif %}
+                            </td>
                         </tr>
                     {% endfor %}
                     </tbody>
