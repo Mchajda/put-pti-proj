@@ -75,7 +75,7 @@ class PostController extends AbstractController
         }
 
         return $this->render('front/post/index.html.twig', [
-            'room' => $room, 'post' => $post,
+            'room' => $room, 'post' => $post, 'user' => $user,
             'comments' => $comments, 'is_participating' => $is_participating,
         ]);
     }

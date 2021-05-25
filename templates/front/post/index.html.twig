@@ -48,6 +48,8 @@
                 <button type="submit" class="btn btn-primary">Post!</button>
             </div>
         </form>
+    {% elseif user.status == "banned" %}
+        <div class="alert alert-danger">You're banned on this forum!</div>
     {% else %}
         <div class="form-group">
             <a href="{{ path('room_join', {'room_id' : room.getId()}) }}" type="submit" class="btn btn-warning">Join this room</a>
