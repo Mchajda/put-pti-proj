@@ -53,8 +53,8 @@
                     <tr>
                         <th>Room name</th>
                         <th>Author</th>
-                        <th>Actions</th>
                         <th>Create date</th>
+                        <th>Actions</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -62,8 +62,14 @@
                         <tr>
                             <td>{{ room.name }}</td>
                             <td>{{ room.creator.nickname }}</td>
-                            <td></td>
                             <td>{{ room.createdAt | date("Y-m-d H:i:s") }}</td>
+                            <td>
+                                {% if room.status == "disabled" %}
+                                    <a href="{{ path('admin_enable_room', {'room_id' : room.id}) }}" class="btn btn-warning btn-sm">Enable</a>
+                                {% else %}
+                                    <a href="{{ path('admin_disable_room', {'room_id' : room.id}) }}" class="btn btn-danger btn-sm">Disable</a>
+                                {% endif %}
+                            </td>
                         </tr>
                     {% endfor %}
                     </tbody>
