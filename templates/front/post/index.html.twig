@@ -40,21 +40,26 @@
     {% endif %}
 
     {% if is_participating == true %}
-        <form method="POSt" action="{{ path('create_comment', {'room_id' : room.getId(), 'parent_post_id' : post.id}) }}">
-            <div class="form-group">
-                <textarea class="form-control" id="editor1" name="text"></textarea>
-            </div>
-            <div class="form-group">
-                <button type="submit" class="btn btn-primary">Post!</button>
-            </div>
-        </form>
-    {% elseif user.status == "banned" %}
-        <div class="alert alert-danger">You're banned on this forum!</div>
+        {% if user.status == "banned" %}
+            <div class="alert alert-danger">You're banned on this forum!</div>
+        {% elseif room.status == "disabled" %}
+            <div class="alert alert-danger">This room is disabled!</div>
+        {% else %}
+            <form method="POSt" action="{{ path('create_post', {'room_id' : room.getId()}) }}">
+                <div class="form-group">
+                    <textarea class="form-control" id="editor1" name="text"></textarea>
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary">Post!</button>
+                </div>
+            </form>
+        {% endif %}
     {% else %}
         <div class="form-group">
             <a href="{{ path('room_join', {'room_id' : room.getId()}) }}" type="submit" class="btn btn-warning">Join this room</a>
         </div>
     {% endif %}
+    
 {% endblock %}
 {% block javascripts %}
     {{ parent() }}
