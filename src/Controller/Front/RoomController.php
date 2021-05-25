@@ -187,7 +187,7 @@ class RoomController extends AbstractController
                 return $this->redirectToRoute('main');
             }
         } else {
-            return $this->redirectToRoute('main');
+            return $this->redirectToRoute('app_login');
         }
     }
 }
