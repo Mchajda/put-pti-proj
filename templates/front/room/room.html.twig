@@ -27,6 +27,11 @@
     {% endif %}
 
     {% if is_participating == true %}
+        {% if user.status == "banned" %}
+            <div class="alert alert-danger">You're banned on this forum!</div>
+        {% elseif room.status == "disabled" %}
+            <div class="alert alert-danger">This room is disabled!</div>
+        {% else %}
         <form method="POSt" action="{{ path('create_post', {'room_id' : room.getId()}) }}">
             <div class="form-group">
                 <textarea class="form-control" id="editor1" name="text"></textarea>
@@ -35,8 +40,7 @@
                 <button type="submit" class="btn btn-primary">Post!</button>
             </div>
         </form>
-    {% elseif user.status == "banned" %}
-        <div class="alert alert-danger">You're banned on this forum!</div>
+        {% endif %}
     {% else %}
         <div class="form-group">
             <a href="{{ path('room_join', {'room_id' : room.getId()}) }}" type="submit" class="btn btn-warning">Join this room</a>
