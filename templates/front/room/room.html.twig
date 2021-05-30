@@ -22,7 +22,7 @@
                 </div>
             </div>
         {% endfor %}
-    {% else %}
+    {% elseif room.status != "disabled" %}
         Welcome in {{ room.getName() }} {{ user.getNickname() }}, write your first post!
     {% endif %}
 

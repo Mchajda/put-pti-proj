@@ -23,7 +23,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c1199655-f345-4d7b-85a2-a06282d6bedc" name="Default Changelist" comment="categorycontroller">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/admin/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/index.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/front/post/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/front/post/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/front/room/room.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/front/room/room.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -146,7 +149,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/templates/admin" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
@@ -210,7 +213,9 @@
       <workItem from="1621337065596" duration="889000" />
       <workItem from="1621362560839" duration="241000" />
       <workItem from="1621362812245" duration="3542000" />
-      <workItem from="1621966592205" duration="4433000" />
+      <workItem from="1621966592205" duration="4451000" />
+      <workItem from="1622047655682" duration="25000" />
+      <workItem from="1622360511835" duration="1514000" />
     </task>
     <task id="LOCAL-00001" summary="categorycontroller">
       <created>1617952383383</created>
