@@ -24,7 +24,7 @@
   <component name="ChangeListManager">
     <list default="true" id="c1199655-f345-4d7b-85a2-a06282d6bedc" name="Default Changelist" comment="categorycontroller">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/admin/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/front/post/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/front/post/index.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/front/room/room.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/front/room/room.html.twig" afterDir="false" />
     </list>
@@ -215,7 +215,9 @@
       <workItem from="1621362812245" duration="3542000" />
       <workItem from="1621966592205" duration="4451000" />
       <workItem from="1622047655682" duration="25000" />
-      <workItem from="1622360511835" duration="1514000" />
+      <workItem from="1622360511835" duration="2400000" />
+      <workItem from="1622375325050" duration="11000" />
+      <workItem from="1622539198314" duration="1691000" />
     </task>
     <task id="LOCAL-00001" summary="categorycontroller">
       <created>1617952383383</created>

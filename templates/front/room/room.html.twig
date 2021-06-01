@@ -7,12 +7,20 @@
         {% for post in posts %}
             <div class="d-flex post">
                 <div>
-                    <a href="{{ path('other_user_profile', {'nickname' : post.author.nickname}) }}"><img class="avatar" src="https://picsum.photos/200" /></a>
+                    {% if post.author.nickname == app.user.nickname %}
+                        <a href="{{ path('profile', {'nickname' : post.author.nickname}) }}"><img class="avatar" src="https://picsum.photos/200" /></a>
+                    {% else %}
+                        <a href="{{ path('other_user_profile', {'nickname' : post.author.nickname}) }}"><img class="avatar" src="https://picsum.photos/200" /></a>
+                    {% endif %}
                 </div>
                 <div class="pl-4 w-100">
                     <div class="d-flex align-items-baseline justify-content-between">
                         <div>
-                            <a href="{{ path('other_user_profile', {'nickname' : post.author.nickname}) }}"><h5>{{ post.getAuthor().getNickName() }}</h5></a>
+                            {% if post.author.nickname == app.user.nickname %}
+                                <a href="{{ path('profile') }}"><h5 class="mb-0">{{ post.getAuthor().getNickName() }}</h5></a>
+                            {% else %}
+                                <a href="{{ path('other_user_profile', {'nickname' : post.author.nickname}) }}"><h5 class="mb-0">{{ post.getAuthor().getNickName() }}</h5></a>
+                            {% endif %}
                         </div>
                         <div style="">
                             <h6>{{ post.getCreatedAt()|date("Y-m-d H:i:s") }}</h6>
