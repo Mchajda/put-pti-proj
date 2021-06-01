@@ -30,7 +30,7 @@
 
             <div class="pull-right ">
                 {% if app.user is not null and app.user.getRoles[0] == "ROLE_ADMIN" %}
-                    <a href="{{ path('admin_panel') }}">Admin panel</a>
+                    <a href="{{ path('admin_panel') }}" class="border-right border-secondary pr-2">Admin panel</a>
                 {% endif %}
                 {% if not app.user %}
                     <a href="{{ path('app_register_form') }}" class="border-right border-secondary pr-2">Register</a>
